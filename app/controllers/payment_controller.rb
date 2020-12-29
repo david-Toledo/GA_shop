@@ -4,7 +4,6 @@ class PaymentController < ApplicationController
 
   def pay
     @token = client_token
-
     @total = 0
     @current_user.basket.line_items.each do |item|
       @total += item.product.price*item.quantity
@@ -42,7 +41,14 @@ class PaymentController < ApplicationController
         :submit_for_settlement => true
       }
     )
-    redirect_to products_path
+    raise 'hell'
+    Order.create! user_id:@current_user.id, total:total
+
+
+
+
+
+    redirect_to orders_thankyou_path
   end
 
 end

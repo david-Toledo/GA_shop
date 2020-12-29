@@ -12,7 +12,7 @@ This is a basic model where users can be created, users can log in, log out and 
 Links
 ============================================================
 Github: https://github.com/david-Toledo/GA_shop
-Heroku: https://ga-amazing-shop.herokuapp.com/
+Heroku: https://ga-shop.herokuapp.com/
 
 Technologies Used
 =============================================================

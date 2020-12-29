@@ -11,4 +11,8 @@ class OrdersController < ApplicationController
     @order_items = OrderItem.where order_id:params[:id]
   end
 
+  def thankyou
+
+  end
+
 end

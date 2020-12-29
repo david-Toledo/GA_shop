@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # get 'orders/index'
   # get 'orders/show'
 
-  resources :orders
+resources :orders
+get 'orders/thankyou' => 'orders#thankyou'
+
 
 root to: 'pages#home'
 
@@ -28,5 +30,7 @@ delete '/login' => 'session#destroy'
 
 get '/payment' => 'payment#pay'
 post '/payment' => 'payment#process_payment'
+
+
 
 end
