@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Amazing GA Shop</title>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+  </head>
+
+
+  <body>
+    <header>
+
+      <nav>
+    <div class="nav-wrapper container">
+      <ul>
+        <li class="brand-logo"><%= link_to "The GA Shop" , root_path  %> </li>
+      </ul>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><%= link_to "Products", products_path %></li>
+        <% if @current_user.present? %>
+          <li><%= link_to "basket", basket_path %></li>
+          <li><%= link_to "Orders", orders_path %></li>
+          <li><%= link_to "Edit profile", users_edit_path %></li>
+          <li><%= link_to "Logout", login_path, method: 'delete'%></li>
+        <% else %>
+          <li><%= link_to "Login", login_path  %></li>
+          <li><%= link_to "Sign Up", new_user_path  %></li>
+        <% end %>
+
+      </ul>
+    </div>
+  </nav>
+
+   <ul class="sidenav" id="mobile-demo">
+    <li><%= link_to "Products", products_path %></li>
+    <% if @current_user.present? %>
+      <li><%= link_to "basket", basket_path %></li>
+      <li><%= link_to "Orders", orders_path %></li>
+      <li><%= link_to "Edit profile", users_edit_path %></li>
+      <li><%= link_to "Logout", login_path, method: 'delete'%></li>
+    <% else %>
+      <li><%= link_to "Login", login_path  %></li>
+      <li><%= link_to "Sign Up", new_user_path  %></li>
+    <% end %>
+
+  </ul>
+
+
+
+      <!-- <nav>
+        <div class="nav-wrapper container" >
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+
+            <li> <%= link_to "The GA Shop", root_path %> </li>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <li><%= link_to "Products", products_path %></li>
+            <% if @current_user.present? %>
+              <li><%= link_to "basket", basket_path %></li>
+              <li><%= link_to "Edit profile", users_edit_path %></li>
+              <li><%= link_to "Logout", login_path, method: 'delete'%></li>
+            <% else %>
+              <li><%= link_to "Login", login_path  %></li>
+              <li><%= link_to "Sign Up", new_user_path  %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav> -->
+
+    </header>
+
+    <main>
+
+
+    <div class="container welcome">
+        <% if @current_user.present? %>
+        <%= "(Admin)" if @current_user.admin? %>  Welcome, <strong> <%= @current_user.username %> </strong>
+        <p id="avatar"> <%= cl_image_tag @current_user.image %>
+        <% else %> </p>
+        <% end %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+    <!-- </div>
+    <div class="container">
+      <footer>
+        &copy Follow us on Facebook
+      </footer>
+    </div> -->
+
+    <footer class="page-footer">
+
+        <div class="footer-copyright">
+          <div class="container">
+          &copy 2020 General Assembly - Sydney
+          <a class="grey-text text-lighten-4 right" href="#!">Follow us on Facebook</a>
+          </div>
+        </div>
+      </footer>
+
+
+
+  </body>
+</html>

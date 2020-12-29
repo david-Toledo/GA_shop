@@ -1,0 +1,65 @@
+<h2>
+<%= @product.title %>
+
+</h2>
+
+<div class="">
+
+  <% if @current_user.present? && @current_user.admin? %>
+
+  <%= link_to 'Edit Product', edit_product_path  %>
+
+   <%= link_to 'Delete Product', product_path(@product.id), method:'delete' %>
+
+   <% end %>
+
+</div>
+
+
+
+<div class="">
+
+  <p>
+    <strong>Price:</strong>
+    AUD $ <%= @product.price %>
+  </p>
+  <p>
+    <strong>Brand:</strong>
+    <%= @product.brand %>
+  </p>
+  <p>
+    <strong>Department:</strong>
+    <%= @product.department %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </p>
+
+  <p>
+    <div class="form">
+
+
+    <%= form_with url: basket_add_item_path, local:true do |f| %>
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity, :value =>1, :min =>1 %>
+    <%= f.hidden_field :product_id, value: @product.id %>
+    <div class="waves-effect waves-light btn">
+      <%= f.submit 'Add'%>      
+    </div>
+    <%end %>
+
+    </div>
+
+  </p>
+
+
+  <p>
+
+    <%= cl_image_tag @product.image %>
+  </p>
+
+
+
+
+</div>
