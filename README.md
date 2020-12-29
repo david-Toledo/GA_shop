@@ -9,7 +9,7 @@ This e-shop project use CRUD operations, associations, authorisation and authent
 
 This is a basic model where users can be created, users can log in, log out and select different items and add them in their shopping cart.
 
-Links
+Link
 ============================================================
 Github: https://github.com/david-Toledo/GA_shop
 Heroku: https://ga-shop.herokuapp.com/
