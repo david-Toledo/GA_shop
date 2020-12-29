@@ -9,6 +9,10 @@
 
 </div>
 
+<div class="btn grey darken-4">
+    <%= link_to "Pay", payment_path %>
+</div>
+
 <div class="">
 
   <% @current_user.basket.line_items.each do |item| %>
@@ -33,6 +37,4 @@
 
       <br>
   
-  <a href='/payment' class="waves-effect waves-light btn-large">Pay</a>
-
 </div>

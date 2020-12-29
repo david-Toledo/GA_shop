@@ -40,7 +40,8 @@ h2{
 }
 
 #logo img{
-  max-width: 300px;
+  height: 250px;
+  // width: 600px;
   // align-self:center !important;
 }
 
@@ -61,3 +62,6 @@ main {
 // .nav-wrapper{
 //   background-color: #bbdefb;
 // }
+img {
+  max-width: 200px;
+}

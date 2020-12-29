@@ -5,8 +5,10 @@
   <%= form_with url: payment_path, id:"payment-form", local:true do |f| %>
     <%= hidden_field_tag "nonce" %>
     <div id="dropin-container"></div>
+    <div class="btn grey darken-4">
+        <input type="submit" name="" value="pay now">
+    </div>
 
-    <input type="submit" name="" value="pay now">
   <% end %>
 
 
