@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # get 'orders/show'
 
 resources :orders
-get 'orders/thankyou' => 'orders#thankyou'
+get 'payment/thankyou' => 'payment#thankyou'
 
 
 root to: 'pages#home'

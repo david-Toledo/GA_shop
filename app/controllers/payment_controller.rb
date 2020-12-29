@@ -41,14 +41,18 @@ class PaymentController < ApplicationController
         :submit_for_settlement => true
       }
     )
-    
+
     Order.create! user_id:@current_user.id, total:total
 
 
 
 
 
-    redirect_to orders_thankyou_path
+    redirect_to payment_thankyou_path
+  end
+
+  def thankyou
+
   end
 
 end
