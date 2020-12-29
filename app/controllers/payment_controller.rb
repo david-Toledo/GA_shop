@@ -41,7 +41,7 @@ class PaymentController < ApplicationController
         :submit_for_settlement => true
       }
     )
-    raise 'hell'
+    
     Order.create! user_id:@current_user.id, total:total
 
 
