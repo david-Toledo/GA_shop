@@ -12,7 +12,7 @@
       <%= link_to product.title, product_path(product.id) %>
     </li>
     <li>
-      <%= link_to product.title, product_path(product.id) %>
+      <%= cl_image_tag product.image %>
     </li>
 
     <% end %>
