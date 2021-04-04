@@ -65,5 +65,29 @@ main {
 //   background-color: #bbdefb;
 // }
 img {
-  max-width: 200px;
+  max-width: 400px;
+}
+
+.product{
+  display: flex;
+  // height: 200px;
+  // align-content: stretch;
+  flex-wrap: wrap;
+  width: 500px;
+  // border: 2px solid green;
+  margin: 50px auto;
+}
+
+.products{
+  // display: flex;
+  // border: 1px solid black;
+  // align-items: center;
+  height:400px;
+  width: 400px;
+  flex:1;
+  margin: 10px 0;
+  // background-color: rgb(211, 226, 224)
+  text-align: center;
+  font-size: 40px;
+
 }
